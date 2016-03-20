@@ -7,8 +7,7 @@
         "tsc:w": "tsc -w",
         "lite": "lite-server",
         "typings": "typings",
-        "postinstall": "typings install",
-        "test": "karma start"
+        "postinstall": "typings install"
     },
     "license": "ISC",
     "dependencies": {
@@ -24,11 +23,6 @@
         "concurrently": "^2.0.0",
         "lite-server": "^2.1.0",
         "typescript": "^1.8.9",
-        "typings": "^0.7.9",
-        "jasmine-core": "^2.3.4",
-        "jasmine-spec-reporter": "^2.4.0",
-        "karma": "^0.13.15",
-        "karma-chrome-launcher": "^0.2.1",
-        "karma-jasmine": "^0.3.6"
+        "typings": "^0.7.9"
     }
 }
