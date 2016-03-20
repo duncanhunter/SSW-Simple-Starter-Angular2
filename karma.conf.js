@@ -41,7 +41,7 @@ module.exports = function(config) {
     ],
     proxies: {
       // required for component assets fetched by Angular's compiler
-      "/app/": "/base/src/app/"
+      "/src/": "/base/src/"
     },
     exclude: [],
     preprocessors: {},

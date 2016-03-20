@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="">
+        <h4>One way</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <pre>
+                    <![CDATA[
+                        <input [value]="binding">
+                    ]]>
+                </pre>
+            </div>
+            <div class="col-sm-6">
+                <h4>Input value: {{binding}}</h4>
+                <input [value]="binding">
+            </div>
+        </div>
+    </div>
+    <h4>Two way</h4>
+    <div>
+        <![CDATA[
+            <input [(ngModel)]="binding">
+       ]]>
+    </div>
+    <div>
+        <input [(ngModel)]="binding">
+    </div>
+    <div>
+        <p>Input value: {{binding}}</p>
+    </div>
+</div>
