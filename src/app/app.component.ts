@@ -5,7 +5,7 @@ import {Component} from 'angular2/core';
     templateUrl: 'src/app/app.component.html'
 })
 export class AppComponent { 
-    binding: string = 'default binding value';
+    value: string = 'default binding value';
     link = 'http://angular.io';
     title: string = 'App Component';
     ngIf: string = ''
