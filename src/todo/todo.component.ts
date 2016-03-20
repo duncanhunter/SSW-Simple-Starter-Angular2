@@ -6,12 +6,14 @@ import {TodoForm} from './todo-form.component';
 @Component({
   selector: 'todo',
   template: `
+  <div class="col-sm-6 col-sm-offset-3">
     <h2>Todo</h2>
     <span>{{remaining}} of {{todos.length}} remaining</span>
     [ <a (click)="archive()">archive</a> ]
 
     <todo-list [todos]="todos"></todo-list>
-    <todo-form (newTask)="addTask($event)"></todo-form>`,
+    <todo-form (newTask)="addTask($event)"></todo-form>
+    </div>`,
   styles:['a { cursor: pointer; cursor: hand; }'],
   directives: [TodoList, TodoForm]
 })

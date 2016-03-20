@@ -5,9 +5,13 @@ import {Todo} from './todo';
   selector: 'todo-form',
   template: `
     <form (ngSubmit)="addTodo()">
+     <div class="input-group">
       <input type="text" class="form-control" [(ngModel)]="task" size="30"
              placeholder="add new todo here">
-      <input class="btn btn-primary" type="submit" value="add">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit" value="add">Add</button>
+      </span>
+    </div>
     </form>`
 })
 export class TodoForm {
