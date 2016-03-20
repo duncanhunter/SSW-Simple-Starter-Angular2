@@ -5,17 +5,26 @@ import {Component} from 'angular2/core';
     templateUrl: 'src/app/app.component.html'
 })
 export class AppComponent { 
-    title: string = 'App Component'
+    binding: string = 'default binding value';
+    link = 'http://angular.io';
+    title: string = 'App Component';
+    ngIf: string = ''
+    hiddenText: string = ''
+    item: string = ''
+    items: string[] = []
+    isPrimary: boolean = false;
     
     
-    testFunction() {
-       let name = 'Bob';
-       let friends = [] 
-       
-       friends.forEach(function (friend) {
-           console.log(this.name);
-       })
-        
+    alert(clicked) {
+        alert(clicked);   
+    }
+    
+    addItems(item) {
+        this.items.push(item);
+    }
+    
+    activate() {
+        this.isPrimary = !this.isPrimary;
     }
     
 }

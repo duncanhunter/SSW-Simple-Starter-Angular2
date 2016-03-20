@@ -1,30 +1,131 @@
 <div class="container">
-    <div class="">
-        <h4>One way</h4>
-        <div class="row">
-            <div class="col-sm-6">
-                <pre>
-                    <![CDATA[
-                        <input [value]="binding">
-                    ]]>
-                </pre>
-            </div>
-            <div class="col-sm-6">
-                <h4>Input value: {{binding}}</h4>
+    <div class="well">
+        <h4>Interpolation</h4>
+        <div class="well">
+            <p ngNonBindable>{{binding}}</p>
+        </div>
+        <div>
+            <samp>Input value: {{binding}}</samp>
+        </div>
+    </div>
+    <div class="col-sm-6 well">
+        <h4>One way binding</h4>
+        <div class="well">
+            <![CDATA[
                 <input [value]="binding">
+            ]]>
+        </div>
+        <div>
+            <input class="form-control" [value]="binding">
+        </div>
+        <div>
+            <samp>Input value: {{binding}}</samp>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 well">
+            <h4>Two way binding</h4>
+            <div class="well">
+                <![CDATA[
+                <input [(ngModel)]="binding">
+            ]]>
+            </div>
+            <div>
+                <input class="form-control" [(ngModel)]="binding">
+            </div>
+            <div>
+                <samp>Input value: {{binding}}</samp>
             </div>
         </div>
     </div>
-    <h4>Two way</h4>
-    <div>
-        <![CDATA[
-            <input [(ngModel)]="binding">
-       ]]>
+    <div class="well">
+        <h4>Property Binding</h4>
+        <div class="well">
+            <![CDATA[
+                    <a [href]="link">{{link}}</a>
+                ]]>
+        </div>
+        <div>
+            <a [href]="link">{{link}}</a>
+        </div>
     </div>
-    <div>
-        <input [(ngModel)]="binding">
+    <div class="well">
+        <h4>Event Binding</h4>
+        <div class="well">
+            <![CDATA[
+                  (click)="alert('clicked')"
+                ]]>
+        </div>
+        <div>
+            <button class="btn btn-default" (click)="alert('clicked')">Click me</button>
+        </div>
     </div>
-    <div>
-        <p>Input value: {{binding}}</p>
+    <div class="well">
+        <h4>Structural Directives - ngIf</h4>
+        <div class="well">
+            <![CDATA[
+                    <p *ngIf="ngIf.length > 3">Input text is > 3!</p>
+             ]]>
+        </div>
+        <div>
+            <input class="form-control" [(ngModel)]="ngIf">
+        </div>
+        <div>
+            <p *ngIf="ngIf.length > 3">Binding text is > 3!</p>
+        </div>
+    </div>
+    <div class="well">
+        <h4>Hidden property binding</h4>
+        <div class="well">
+            <![CDATA[
+                    <p [hidden]="hidden.length < 3">Input text is > 3!</p>
+             ]]>
+        </div>
+        <div>
+            <input class="form-control" [(ngModel)]="hiddenText">
+        </div>
+        <div>
+            <p [hidden]="hiddenText.length < 3">Input text is > 3!</p>
+        </div>
+    </div>
+    <div class="well">
+        <h4>Structural Directives - ngFor</h4>
+        <div class="well">
+            <![CDATA[
+                  <p *ngFor="#item of items">{{item}}</p>
+             ]]>
+        </div>
+        <div class="input-group">
+            <input class="form-control" [(ngModel)]="enteredItem" />
+            <span class="input-group-btn">
+                 <button (click)="addItems(enteredItem)" class="btn btn-default">Add</button>
+             </span>
+        </div>
+        <div>
+            <p *ngFor="#item of items">{{item}}</p>
+        </div>
+    </div>
+    <div class="well">
+        <h4>ngClass</h4>
+        <div class="well">
+            <![CDATA[
+                  [ngClass]="isPrimary ? 'btn-primary' : 'btn-default'"
+             ]]>
+        </div>
+        <div>
+            <button (click)="activate()" class="btn" [ngClass]="isPrimary ? 'btn-primary' : 'btn-default'">Activate button class</button>
+        </div>
+    </div>
+    <div class="well">
+        <h4>ngStyle</h4>
+        <div class="well">
+            <![CDATA[
+                   <p [style.backgroundColor]="isPrimary ? 'blue' : 'red'">Back ground color to be styled</p>
+             ]]>
+        </div>
+        <div>
+            <button (click)="activate()" class="btn btn-default">Activate button style</button>
+            <p [style.backgroundColor]="isPrimary ? 'blue' : 'red'">Back ground color to be styled</p>
+        </div>
     </div>
 </div>
